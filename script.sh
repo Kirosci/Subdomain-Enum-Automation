@@ -41,7 +41,7 @@ cat $dir/assetfinder_subdomains.txt $dir/haktrails_subdomains.txt $dir/subfinder
 
 wait
 
-cat $dir/all_assets.txt | grep $domain | awk '{print$1}' | sort -u | tee $dir/subdomains.txt &
+cat $dir/all_assets.txt | grep -i -F .$domain | awk '{print$1}' | sort -u | tee $dir/subdomains.txt &
 
 
 #---------------------------Subdomain_Main_Done--------------------------------------------
